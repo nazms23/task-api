@@ -12,6 +12,6 @@ namespace task_api.Models
         public TaskContext(DbContextOptions<TaskContext> options):base (options)
         {}
 
-        public DbSet<Task> Tasks { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
     }
 }
