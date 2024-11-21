@@ -1,4 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using task_api.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+
+
+builder.Services.AddDbContext<TaskContext>(x=>x.UseSqlite("Data Source=task.db"));
+
 
 // Add services to the container.
 
