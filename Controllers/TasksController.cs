@@ -16,13 +16,11 @@ namespace task_api.Controllers
     public class TasksController : ControllerBase
     {
         private readonly TaskContext _taskContext;
-
         public TasksController(TaskContext taskContext) 
         {
             _taskContext = taskContext;
         }
     
-        
         //! Create ---------
         [Authorize]
         [HttpPost]

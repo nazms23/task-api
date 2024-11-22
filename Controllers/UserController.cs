@@ -79,7 +79,7 @@ namespace task_api.Controllers
 
                 if (result.Succeeded)
                 {
-                    return Ok(new {token = GenerateJWT(user)});
+                    return Ok(new {token = GenerateJWT(user),username = user.UserName});
                 }
 
                 return Unauthorized();

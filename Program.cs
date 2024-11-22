@@ -10,6 +10,17 @@ using Microsoft.OpenApi.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 
+//? Cors -----------
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+builder.Services.AddCors(options =>{
+    options.AddPolicy(MyAllowSpecificOrigins,policy=>{
+        policy.AllowAnyOrigin()
+        .AllowAnyHeader()
+        .AllowAnyMethod();
+    });
+});
+//? ----------------------
+
 
 
 //? VERİTABANI -----------
@@ -47,10 +58,8 @@ builder.Services.AddAuthentication(x=>{
 
 
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(option =>
 {
@@ -82,7 +91,6 @@ builder.Services.AddSwaggerGen(option =>
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -90,7 +98,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
+//? Cors -----------
+app.UseCors(MyAllowSpecificOrigins);
+//? ----------------------
 app.UseAuthorization();
 
 app.MapControllers();
