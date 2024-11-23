@@ -10,7 +10,7 @@
 }
 2. Gereksinimler
    - Şifre minimum 6 karakter olmalı.
-   - Şifre alfanümerik karakter içeremez. 
+   - Şifre alfanümerik olmayan karakter içeremez. 
 3. Responses
    - 400 Bad Request -> Herhangi bir hata olduğunda mesajıyla beraber.
    - 201 Created -> Kayıt işlemi başarıyla gerçekleştiğinde.
