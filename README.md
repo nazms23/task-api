@@ -24,7 +24,7 @@
 }
 2. Gereksinimler
    - Şifre minimum 6 karakter olmalı.
-   - Şifre alfanümerik karakter içeremez. 
+   - Şifre alfanümerik olmayan karakter içeremez. 
 3. Responses
    - 400 Bad Request -> Herhangi bir hata olduğunda mesajıyla beraber.
    - 200 Ok -> Giriş işlemi başarıyla gerçekleştiğinde **{token:xxxx,usename:xxxx}**.
